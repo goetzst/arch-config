@@ -70,6 +70,10 @@ home/stefan/.cabal/
 home/stefan/.dbus/
 home/stefan/.lesshst
 home/stefan/.java/
+home/stefan/.m2
+home/stefan/.bash_history
+home/stefan/gdrive
+home/stefan/VirtualBox\ VMs/
 home/stefan/.weechat/
 home/stefan/.swt/
 home/stefan/.eclipse/
@@ -80,7 +84,6 @@ home/stefan/.reds
 home/stefan/.icons
 home/stefan/.zhistory
 
-home/stefan/Papers
 home/stefan/currentSemester
 
 home/stefan/.config/chromium
@@ -113,3 +116,6 @@ home/stefan/.config/canto/plugins/
 home/stefan/.config/sublime-text-3
 home/stefan/.config/user-dirs.dirs
 home/stefan/.config/user-dirs.locale
+home/stefan/.config/VirtualBox
+home/stefan/.config/dconf
+home/stefan/.config/libreoffice

@@ -81,13 +81,36 @@ __git_files () {
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+# historySearch
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^P' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^N' down-line-or-beginning-search
+setopt HIST_FIND_NO_DUPS
+if [[ -o HIST_FIND_NO_DUPS ]]; then
+    local -A unique_matches
+    for n in $_history_substring_search_matches; do
+        unique_matches[${history[$n]}]="$n"
+    done
+    _history_substring_search_matches=(${(@no)unique_matches})
+fi
+
 # Less greedy word boundaries
 WORDCHARS=${WORDCHARS/\/}
 
 # Environment vars
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
-export EDITOR=vim
+export EDITOR=nvim
+export BROWSER=qutebrowser
 export DARCS_DO_COLOR_LINES=1
 export GCC_COLORS=1
 export __GL_SYNC_DISPLAY_DEVICE="DP-0"
+
+
+# syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 

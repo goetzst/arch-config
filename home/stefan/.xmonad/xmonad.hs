@@ -80,8 +80,10 @@ extraKeys =
   --kill
   , ((mod4Mask .|. shiftMask,	xK_c), kill) --quit focused window
 
-   -- never terminate X please
+  -- never terminate X please
   , ((mod4Mask .|. shiftMask,	xK_q), return ())
+  -- rofi
+  , ((mod4Mask,			xK_p), spawn "exec /usr/bin/rofi -show run")
 
    -- lock the screen when not in use
   , ((mod4Mask,			xK_s), spawn "i3lock -i ~/Pictures/hitagi/hitagi_face_shortHair.png -nt")
@@ -99,10 +101,8 @@ extraKeys =
      ]
 
 friendlyNames = [
-        (1, "mnt"),
         (2, "ghci+ts"),
-        (3, "urxvt"),
-        (4, "FF"),
+        (4, "qute"),
         (5, "Chromium"),
         (8, "ThunderBird")
     ]
