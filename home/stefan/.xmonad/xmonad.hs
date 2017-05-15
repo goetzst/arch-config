@@ -91,6 +91,12 @@ extraKeys =
    -- reset the mouse cursor
   , ((mod4Mask,			xK_Escape), spawn "swarp 0 0")
 
+  -- playerctl
+  , ((mod4Mask,			xK_Home     ), spawn "exec playerctl play-pause")
+  , ((mod4Mask,			xK_End      ), spawn "exec playerctl stop")
+  , ((mod4Mask,			xK_Page_Up  ), spawn "exec playerctl next")
+  , ((mod4Mask,			xK_Page_Down), spawn "exec playerctl previous")
+
   ]
   -- Switch workspaces using symbols
   ++ [ ((mod4Mask .|. m, k), windows $ f i)
