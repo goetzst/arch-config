@@ -32,11 +32,15 @@ home/stefan/.gitconfig
 home/stefan/.histfile
 home/stefan/.local/
 home/stefan/.ghc/
+home/stefan/.gnupg/
 home/stefan/.nix-defexpr/
 home/stefan/.nix-profile
 home/stefan/.pentadactyl/
 home/stefan/Pictures/
 home/stefan/.pki
+home/stefan/.rnd
+home/stefan/.swipl-dir-history/
+home/stefan/.tooling/
 home/stefan/.rtorrent/
 home/stefan/.ssh/
 home/stefan/.texlive
@@ -114,6 +118,8 @@ home/stefan/.config/canto/feeds
 home/stefan/.config/canto/pid
 home/stefan/.config/canto/plugins/
 home/stefan/.config/sublime-text-3
+home/stefan/.config/spotify/
+home/stefan/.config/gconf/
 home/stefan/.config/user-dirs.dirs
 home/stefan/.config/user-dirs.locale
 home/stefan/.config/VirtualBox
