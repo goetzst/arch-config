@@ -29,6 +29,8 @@ test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors
 alias vim='nvim'
 alias startVPN='systemctl start openvpn-ovpn.service'
 alias stopVPN='systemctl stop openvpn-ovpn.service'
+alias startCUPS=' systemctl start org.cups.cupsd.service'
+alias stopCUPS=' systemctl stop org.cups.cupsd.service'
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'

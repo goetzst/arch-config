@@ -4,24 +4,29 @@ noremap k gk
 
 let mapleader="\<SPACE>"
 
-" easier buffer navigation
-noremap <M-h> <C-w>h
-noremap <M-j> <C-w>j
-noremap <M-k> <C-w>k
-noremap <M-l> <C-w>l
-noremap <M-H> <C-w>H
-noremap <M-J> <C-w>J
-noremap <M-K> <C-w>K
-noremap <M-L> <C-w>L
+" buffer
+noremap <C-p> :prev<CR>
+noremap <C-n> :n<CR>
 
+" splitting
 noremap <Leader>s <C-w>s
+noremap <Leader>v <C-w>v
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+"
+noremap <M-j> :resize +5<CR>
+noremap <M-k> :resize -5<CR>
+noremap <M-h> :vertical resize +5<CR>
+noremap <M-l> :vertical resize -5<CR>
+"
+
+" plugins
 noremap <Leader>r :checktime<CR>zuz
 noremap <Leader>u :UndotreeToggle<CR>
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>f <C-C>za
-
-noremap Cn :cn<CR>
-noremap Cp :cp<CR>
 
 autocmd VimResized * wincmd =
 
@@ -54,11 +59,12 @@ set softtabstop=8
 """PLUGINSETTINGS
 " airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '>'
 
 " code folding
 set foldmethod=syntax
-set foldnestmax=1
+set foldnestmax=3
 set foldlevel=0
 set foldcolumn=1
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
