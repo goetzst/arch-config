@@ -14,7 +14,8 @@ html > body[style="margin: 0px"] > img[style="-webkit-user-select: none; display
 }
 
 * {
-    font-family: terminus !important;
+    font-family: Terminus, xos4 Terminus !important;
+    -webkit-user-select: text !important;
 }
 
 /* Color overrides */

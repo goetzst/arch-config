@@ -27,14 +27,15 @@ bindkey -e
 # Custom aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 alias vim='nvim'
-alias startVPN='systemctl start openvpn-ovpn.service'
-alias stopVPN='systemctl stop openvpn-ovpn.service'
-alias startCUPS=' systemctl start org.cups.cupsd.service'
-alias stopCUPS=' systemctl stop org.cups.cupsd.service'
+alias startVPN='systemctl start openvpn-client@ovpn.service && sudo ~/.ts3VPNFix'
+alias stopVPN='systemctl stop openvpn-client@ovpn.service'
+alias startCUPS='systemctl start org.cups.cupsd.service'
+alias stopCUPS='systemctl stop org.cups.cupsd.service'
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias diff='colordiff'
+alias mountanime='sudo mount /dev/sda2 /mnt/anime'
 
 alias grep='grep -i --color=auto'
 alias fgrep='fgrep -i --color=auto'
