@@ -1,0 +1,68 @@
+{
+    "workbench.colorTheme": "Monokai",
+
+    //editor
+    "editor.fontSize": 20,
+    "editor.fontWeight": "normal",
+    "editor.rulers": [120],
+    "editor.insertSpaces": true,
+    "editor.multiCursorModifier": "alt",
+    "editor.quickSuggestionsDelay": 5,
+
+
+    //haskell stuff
+    "haskell.hlint.executablePath":  "/home/stefan/.local/bin/hlint",
+    "haskell.ghcMod.executablePath": "/home/stefan/.local/bin/ghc-mod",
+
+    //terminal
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "terminal.integrated.fontSize": 16,
+
+    //vim
+    "vim.disableAnnoyingNeovimMessage": true,
+    "keyboard.dispatch": "keyCode",
+    "vim.neovimPath": "nvim",
+    "vim.enableNeovim": true,
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors" : {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
+    },
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["Z"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.toggleZenMode",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["Z"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.toggleZenMode",
+                    "args": []
+                }
+            ]
+        }
+    ],
+
+    //zenMode
+    "zenMode.restore": false,
+    "zenMode.hideStatusBar": false,
+
+    //dynamicContent
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    }
+}
