@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "vscode-icons",
 
     //editor
     "editor.fontSize": 20,
