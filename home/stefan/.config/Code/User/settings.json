@@ -52,6 +52,16 @@
                     "args": []
                 }
             ]
+        },
+        {
+            "before": ["<C-E>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "eslint.createConfig",
+                    "args": []
+                }
+            ]
         }
     ],
 
