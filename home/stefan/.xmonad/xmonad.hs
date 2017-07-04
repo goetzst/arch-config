@@ -41,7 +41,7 @@ main = do
           spawn "urxvt"
           spawn "urxvt"
           spawn "urxvt"
-          spawn "qutebrowser"
+          spawn "qutebrowser --backend webengine"
           spawn "chromium"
           spawn "thunderbird"
           spawn "teamspeak3"
@@ -69,7 +69,7 @@ main = do
 
     } `additionalKeys` extraKeys
 
-myLayout = s (navi (GridRatio 1)) ||| navi (GridRatio 2) ||| Full
+myLayout = s (navi (GridRatio 1)) ||| Full
   where navi = configurableNavigation noNavigateBorders
         s = id -- spacing 32
 
@@ -86,7 +86,7 @@ extraKeys =
   , ((mod4Mask,			xK_p), spawn "exec /usr/bin/rofi -show run")
 
    -- lock the screen when not in use
-  , ((mod4Mask,			xK_s), spawn "i3lock -i ~/Pictures/hitagi/hitagi_face_shortHair.png -nt")
+  , ((mod4Mask,			xK_l), spawn "import -depth 3 -window root /tmp/i3lockscreen.png && convert -blur 6x6 -colorspace Gray /tmp/i3lockscreen.png /tmp/i3lockscreen.png && i3lock -i /tmp/i3lockscreen.png -n")
 
    -- reset the mouse cursor
   , ((mod4Mask,			xK_Escape), spawn "swarp 0 0")
@@ -121,16 +121,12 @@ workspaceNames n = map elem [1..n]
 manageFloats = composeAll $ fullF : [ title =? x `to` doFloat | x <- floatTitles ]
     where to = (-->)
 
-floatTitles =
-  [ "Firefox Preferences", "About Firefox", "Resize Canvas"
-  , "Downloads", "Software Update", "World of Warcraft", "Limbo"
-  , "Audiosurf", "Audiosurf 2", "Heroes of the Storm", "scaler_test"
-  ]
+floatTitles = []
 
 -- Programs that should start in fullscreen mode. Normally EWMH handles this
 -- properly, but eg. mpv does something weird on initial startup so we have to
 -- do it manually.
-fullTitles = [ "mpv", "IntelliJ" ]
+fullTitles = [ "mpv"]
 
 fullF = fmap (\t -> any (`L.isPrefixOf` t) fullTitles) title --> doFullFloat
 
