@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Monokai One Dark Vivid",
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "vscode-icons",
 
     //editor
@@ -10,6 +10,9 @@
     "editor.multiCursorModifier": "alt",
     "editor.quickSuggestionsDelay": 5,
     "editor.fontFamily": "'DejaVu Sans Mono'",
+    "[haskell]": {
+        "editor.tabSize": 2
+    },
 
 
     //haskell stuff
@@ -46,21 +49,21 @@
             ]
         },
         {
-            "before": ["Z"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.toggleZenMode",
-                    "args": []
-                }
-            ]
-        },
-        {
             "before": ["<C-E>"],
             "after": [],
             "commands": [
                 {
                     "command": "eslint.createConfig",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [],
+            "after": ["<C-n>"],
+            "commands": [
+                {
+                    "command": "workbench.action.files.newUntitledFile",
                     "args": []
                 }
             ]
