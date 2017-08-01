@@ -59,8 +59,8 @@
             ]
         },
         {
-            "before": [],
-            "after": ["<C-n>"],
+            "before": ["<C-n>"],
+            "after": [],
             "commands": [
                 {
                     "command": "workbench.action.files.newUntitledFile",
