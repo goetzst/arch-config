@@ -35,7 +35,7 @@ alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias diff='colordiff'
-alias mountanime='sudo mount /dev/sda2 /mnt/anime'
+alias mountanime='sudo mount -o uid=stefan,fmask=117,umask=007,noatime /dev/sda2 /mnt/anime'
 
 alias grep='grep -i --color=auto'
 alias fgrep='fgrep -i --color=auto'
