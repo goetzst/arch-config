@@ -63,22 +63,15 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 setopt promptsubst
 
 autoload -U colors && colors
-#local lb='%{$fg_no_bold[default]%}[%{$reset_color%}'
-#      rb='%{$fg_no_bold[default]%}]%{$reset_color%}'
+local lb='%{$fg_no_bold[default]%}[%{$reset_color%}'
+      rb='%{$fg_no_bold[default]%}]%{$reset_color%}'
 
-#PS1="$lb%{$fg_bold[green]%}%D{%H:%M}$rb"\
-#"$lb%{$fg_bold[green]%}%n@%m$rb"\
-#"$lb%{$fg_bold[blue]%}%~$rb"\
-#$'$(__git_ps1 "[%%{\e[38;5;70m%%}%s%%{$reset_color%%}]")'\
-#"%(?..$lb%{$fg_bold[red]%}%?$rb)"\
-#$'\n%{%(?.$fg[green].$fg[red])%}λ%{$reset_color%} '
-
-PS1="[%B%F{red}%D{%H:%M}%f%b]"\
-"[%B%F{142}%n@%m%f%b]"\
-"[%B%F{cyan}%~%f%b]"\
-$'$(__git_ps1 "[%%F{green}%s%%f]")'\
-"%(?..[%B%F{red}%?%f%b])"\
-$'\n%(?.%F{green}.%F{red})λ%f%{\a%} '
+PS1="$lb%{$fg_bold[yellow]%}%D{%H:%M}$rb"\
+"$lb%{$fg_bold[green]%}%n@%m$rb"\
+"$lb%{$fg_bold[blue]%}%~$rb"\
+$'$(__git_ps1 "[%%{\e[38;5;70m%%}%s%%{$reset_color%%}]")'\
+"%(?..$lb%{$fg_bold[red]%}%?$rb)"\
+$'\n%{%(?.$fg[green].$fg[red])%}λ%{$reset_color%} '
 
 PS2="... "
 
@@ -123,5 +116,4 @@ export __GL_SYNC_DISPLAY_DEVICE="DP-0"
 
 
 # syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 

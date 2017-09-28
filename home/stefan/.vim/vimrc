@@ -99,7 +99,7 @@ set mouse=
 set completeopt=menu,menuone,longest,preview
 
 " the default was just horrid
-colorscheme solarized
+colorscheme peachpuff
 highlight Identifier ctermfg=174
 highlight Pmenu ctermbg=16 ctermfg=231
 highlight PmenuSel ctermbg=162 ctermfg=231
