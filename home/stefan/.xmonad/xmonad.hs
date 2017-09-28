@@ -62,7 +62,7 @@ myConfig pipe = defaultConfig
 
 myAltBrowser  = "chromium"
 myBrowser     = "qutebrowser --backend webengine"
-myEditor      = "code"
+myEditor      = "zsh -c -i code"
 myFileManager = "thunar"
 myLauncher    = "rofi -show run"
 myMailClient  = "thunderbird"
@@ -70,7 +70,7 @@ myMusicClient = "spotify"
 myResetMouse  = "swarp 0 0"
 myScreenLock  = "import -depth 3 -window root /tmp/i3lockscreen.png"
                 ++ " && convert -blur 6x6 -colorspace Gray /tmp/i3lockscreen.png /tmp/i3lockscreen.png"
-                ++ " && i3lock -i /tmp/i3lockscreen.png -n"
+                ++ " && i3lock -i /tmp/i3lockscreen.png"
 mySuspend     = myScreenLock ++ " && systemctl suspend"
 myTerminal    = "urxvt"
 
