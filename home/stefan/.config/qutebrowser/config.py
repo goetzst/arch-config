@@ -1308,7 +1308,7 @@ config.bind('<Ctrl-Alt-Shift-C>', 'set -t content.user_stylesheets ~/.config/qut
 # config.bind(';Y', 'hint links yank-primary')
 # config.bind(';b', 'hint all tab-bg')
 # config.bind(';d', 'hint links download')
-# config.bind(';f', 'hint all tab-fg')
+config.bind(';f', 'hint links spawn mpv {hint-url}')
 # config.bind(';h', 'hint all hover')
 # config.bind(';i', 'hint images')
 # config.bind(';o', 'hint links fill :open {hint-url}')
