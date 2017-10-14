@@ -40,7 +40,7 @@ main = do
     $ fullscreenFix
     $ myConfig xmproc `additionalKeys` extraKeys
 
-myConfig pipe = defaultConfig
+myConfig pipe = def
           { borderWidth         = myBorderWidth
           , startupHook         = myStartupHook
           , manageHook          = myManageHook
@@ -66,7 +66,6 @@ myEditor      = "zsh -c -i code"
 myFileManager = "thunar"
 myLauncher    = "rofi -show run"
 myMailClient  = "thunderbird"
-myMusicClient = "spotify"
 myResetMouse  = "swarp 0 0"
 myScreenLock  = "import -depth 3 -window root /tmp/i3lockscreen.png"
                 ++ " && convert -blur 6x6 -colorspace Gray /tmp/i3lockscreen.png /tmp/i3lockscreen.png"
@@ -74,10 +73,16 @@ myScreenLock  = "import -depth 3 -window root /tmp/i3lockscreen.png"
 mySuspend     = myScreenLock ++ " && systemctl suspend"
 myTerminal    = "urxvt"
 
-myPlayerToggle = "playerctl play-pause"
-myPlayerStop   = "playerctl stop"
-myPlayerNext   = "playerctl next"
-myPlayerPrev   = "playerctl previous"
+myPlayerToggle = "echo 'cycle pause\n' > /tmp/mpvfifo"
+myPlayerNext   = "echo 'add chapter 1\n' > /tmp/mpvfifo"
+myPlayerPrev   = "echo 'add chapter -1\n' > /tmp/mpvfifo"
+myPlayerNextPL = "echo 'playlist_next force\n' > /tmp/mpvfifo"
+myPlayerAddVol = "echo 'add volume 1\n' > /tmp/mpvfifo"
+myPlayerSubVol = "echo 'add volume -1\n' > /tmp/mpvfifo"
+myPlayerAddD   = "echo 'seek 5 exact\n' > /tmp/mpvfifo"
+myPlayerSubD   = "echo 'seek -5 exact\n' > /tmp/mpvfifo"
+myPlayerAddMD  = "echo 'seek 60\n' > /tmp/mpvfifo"
+myPlayerSubMD  = "echo 'seek -60\n' > /tmp/mpvfifo"
 
 -- names for appShifts
 myAltBrowserClassName = "Chromium"
@@ -122,7 +127,6 @@ extraKeys =
   , ((mod4Mask              , xK_d)     , spawn myEditor)
   , ((mod4Mask              , xK_f)     , spawn myFileManager)
   , ((mod4Mask              , xK_m)     , spawn myMailClient)
-  , ((mod4Mask              , xK_n)     , spawn myMusicClient)
   , ((mod4Mask .|. shiftMask, xK_Return), spawn myTerminal)
 
   -----------------------------------------------------------------------------
@@ -139,10 +143,19 @@ extraKeys =
   -----------------------------------------------------------------------------
   -- MusicPlayback Control
   -----------------------------------------------------------------------------
+  -- state
   , ((mod4Mask, xK_Home)     , spawn myPlayerToggle)
-  , ((mod4Mask, xK_End)      , spawn myPlayerStop)
   , ((mod4Mask, xK_Page_Up)  , spawn myPlayerNext)
   , ((mod4Mask, xK_Page_Down), spawn myPlayerPrev)
+  , ((mod4Mask, xK_Return)   , spawn myPlayerNextPL)
+  -- volume
+  , ((mod4Mask, xK_equal)    , spawn myPlayerAddVol)
+  , ((mod4Mask, xK_minus)    , spawn myPlayerSubVol)
+  -- seek
+  , ((mod4Mask, xK_Right)    , spawn myPlayerAddD)
+  , ((mod4Mask, xK_Left)     , spawn myPlayerSubD)
+  , ((mod4Mask, xK_Up  )     , spawn myPlayerAddMD)
+  , ((mod4Mask, xK_Down)     , spawn myPlayerSubMD)
 
   ]
 
@@ -169,7 +182,7 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP
 -- ManageHooks
 ---------------------------------------------------------------------------------------------------------------------
 
-myManageHook = appShifts <+> manageFloats <+> manageDocks <+> manageHook defaultConfig
+myManageHook = appShifts <+> manageFloats <+> manageDocks <+> manageHook def
 
 appShifts = composeAll
   [ title     =? myChatClientTitle     --> doShift wTwo
