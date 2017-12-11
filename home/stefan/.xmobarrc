@@ -6,7 +6,8 @@ Config { font = "xft:Terminus-13,DejaVu Sans Mono:pixelsize=13,Kochi Gothic:pixe
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Date "%Y %b %d (%a) %H:%M:%S %Z" "date" 10
                     , Run Network "enp3s0" ["-t", "Down: <fc=#7FC5C6><rx></fc> kB/s | Up: <fc=#ffa600><tx></fc> kB/s"] 10
+                    , Run Com "bash" ["-c", "~/.spotify_status.sh"] "spotify" 10
                     , Run StdinReader
                     ]
-       , template = "%StdinReader% }{ %enp3s0% | %cpu% | <fc=#85919b>%memory%</fc>   <fc=#DACCBB>%date%</fc>"
+       , template = "%StdinReader% }{ %enp3s0% | %cpu% | <fc=#85919b>%memory%</fc> | <fc=#ffffff>%spotify%</fc> | <fc=#DACCBB>%date%</fc>"
        }
