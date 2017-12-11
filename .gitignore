@@ -15,6 +15,7 @@ usr/
 opt/
 sbin
 var/
+swapfile
 
 home/stefan/.bash_logout
 home/stefan/.bash_profile
@@ -91,6 +92,7 @@ home/stefan/.stack
 home/stefan/.reds
 home/stefan/.icons
 home/stefan/.zhistory
+home/stefan/Repos
 
 home/stefan/currentSemester
 
