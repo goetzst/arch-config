@@ -1,11 +1,12 @@
 {
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Default Light+",
     "workbench.iconTheme": "vscode-icons",
 
     //editor
     "editor.fontSize": 20,
     "editor.fontWeight": "normal",
     "editor.rulers": [120],
+    "editor.renderWhitespace": "boundary",
     "editor.insertSpaces": true,
     "editor.multiCursorModifier": "alt",
     "editor.quickSuggestionsDelay": 5,
@@ -13,6 +14,23 @@
     "[haskell]": {
         "editor.tabSize": 2
     },
+    "[prolog]": {
+        "editor.tabSize": 2
+    },
+    "[latex]": {
+        "editor.tabSize": 2
+    },
+    
+    //spellcheck                                                                                              
+    "cSpell.ignoreRegExpList": [                                                                              
+        // latex                                                                                              
+        "\\\\\\w*(\\[.*?\\])?(\\{.*?\\})?",                                                                   
+        "\\$.+?\\$"                                                                                           
+      ],                                                                                                      
+    "cSpell.userWords": [                                                                                     
+        "overcomplicate",                                                                                     
+        "toolchain"                                                                                           
+    ], 
 
 
     //haskell stuff
@@ -29,14 +47,6 @@
     "vim.neovimPath": "nvim",
     "vim.enableNeovim": true,
     "vim.statusBarColorControl": true,
-    "vim.statusBarColors" : {
-        "normal": "#005f5f",
-        "insert": "#5f0000",
-        "visual": "#5f00af",
-        "visualline": "#005f87",
-        "visualblock": "#86592d",
-        "replace": "#000000"
-    },
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": ["Z"],
@@ -74,10 +84,9 @@
     "zenMode.restore": false,
     "zenMode.hideStatusBar": false,
 
-    //dynamicContent
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    }
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "vsicons.dontShowNewVersionMessage": true,
+    "cSpell.language": "en",
+    "explorer.confirmDelete": false
 }
