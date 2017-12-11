@@ -653,7 +653,7 @@ c.content.dns_prefetch = False
 
 ## A list of user stylesheet filenames to use.
 ## Type: List of File, or File
-c.content.user_stylesheets = ['~/workspace/solarized-everything-css/css/solarized-all-sites-dark.css']
+c.content.user_stylesheets = []
 
 ## Enables or disables WebGL.
 ## Type: Bool
@@ -1119,7 +1119,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Switch between tabs using the mouse wheel.
 ## Type: Bool
-# c.tabs.mousewheel_switching = True
+c.tabs.mousewheel_switching = False
 
 ## How new tabs opened from another tab are positioned.
 ## Type: NewTabPosition
@@ -1150,7 +1150,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 ##   - bottom
 ##   - left
 ##   - right
-# c.tabs.position = 'top'
+c.tabs.position = 'left'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
@@ -1167,7 +1167,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'never'
+c.tabs.show = 'always'
 
 ## Time to show the tab bar before hiding it when tabs.show is set to
 ## 'switching'.
@@ -1206,7 +1206,7 @@ c.tabs.show = 'never'
 ## The width of the tab bar if it's vertical, in px or as percentage of
 ## the window.
 ## Type: PercOrInt
-# c.tabs.width.bar = '20%'
+# c.tabs.width.bar = '10%'
 
 ## Width of the progress indicator (0 to disable).
 ## Type: Int
