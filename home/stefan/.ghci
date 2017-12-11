@@ -18,9 +18,9 @@
 :def data \d -> return ("data " ++ d ++ " deriving Show")
 
 :set +t
+:set +s
 :set prompt "\ESC[36;1mλ \ESC[m"
 -- :set prompt "λ "
-:set prompt2 "… "
 
 import Control.Applicative
 import Control.Arrow hiding (left, right)
@@ -46,8 +46,8 @@ import Control.Monad.ST (ST, runST, fixST)
 import "mtl" Control.Monad.State
 import "mtl" Control.Monad.Writer hiding ((<>))
 import Control.Concurrent
-import Control.Parallel
-import Control.Parallel.Strategies
+--import Control.Parallel
+--import Control.Parallel.Strategies
 -- import Data.Array hiding (index, indices)
 import Data.Bits
 -- import Data.Bool
