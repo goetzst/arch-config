@@ -11,7 +11,7 @@ import XMonad.Util.WorkspaceCompare
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Grid
+import qualified XMonad.Layout.BinarySpacePartition as BSP
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.Spacing
 import XMonad.Hooks.SetWMName
@@ -124,6 +124,20 @@ extraKeys =
   , ((mod4Mask .|. shiftMask, xK_q), return ())
 
   -----------------------------------------------------------------------------
+  -- BSP control
+  -----------------------------------------------------------------------------
+  , ((mod4Mask .|. shiftMask                , xK_l), sendMessage $ BSP.ExpandTowards R)
+  , ((mod4Mask .|. shiftMask                , xK_h), sendMessage $ BSP.ExpandTowards L)
+  , ((mod4Mask .|. shiftMask                , xK_j), sendMessage $ BSP.ExpandTowards D)
+  , ((mod4Mask .|. shiftMask                , xK_k), sendMessage $ BSP.ExpandTowards U)
+  , ((mod4Mask .|. shiftMask .|. controlMask, xK_l), sendMessage $ BSP.ShrinkFrom R)
+  , ((mod4Mask .|. shiftMask .|. controlMask, xK_h), sendMessage $ BSP.ShrinkFrom L)
+  , ((mod4Mask .|. shiftMask .|. controlMask, xK_j), sendMessage $ BSP.ShrinkFrom D)
+  , ((mod4Mask .|. shiftMask .|. controlMask, xK_k), sendMessage $ BSP.ShrinkFrom U)
+  , ((mod4Mask .|. shiftMask                , xK_r), sendMessage BSP.Rotate)
+  , ((mod4Mask .|. shiftMask .|. controlMask, xK_r), sendMessage BSP.Swap)
+
+  -----------------------------------------------------------------------------
   -- Start Applications
   -----------------------------------------------------------------------------
   , ((mod4Mask              , xK_p)     , spawn myLauncher)
@@ -179,7 +193,7 @@ extraKeys =
 
 myLayoutHook = smartBorders $ avoidStruts myLayout
 
-myLayout = navi (GridRatio 1) ||| Full
+myLayout = navi BSP.emptyBSP ||| Full
   where navi = configurableNavigation noNavigateBorders
 
 ---------------------------------------------------------------------------------------------------------------------
