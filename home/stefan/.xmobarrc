@@ -1,14 +1,14 @@
-Config { font = "xft:Terminus-13,DejaVu Sans Mono:pixelsize=13,Kochi Gothic:pixelsize=13"
+Config { font = "xft:Terminus-13,xft:FontAwesome-13:bold"
        , bgColor = "black"
        , fgColor = "grey"
        , position = Static { xpos = 1920, ypos = 0, width = 2560, height = 32 }
-       , commands = [ Run Cpu ["-L","5","-H","50","--normal","#85c600","--high","#E03C52"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+       , commands = [ Run Cpu ["-L","5","-H","50","--normal","#85c600","--high","#E03C52","--template","\x2387 <total>%"] 10
+                    , Run Memory ["-t","\x25D5 <usedratio>%"] 10
                     , Run Swap ["-t","<usedratio>%","-H","50","-L","0","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10
                     , Run Date "%Y %b %d (%a) %H:%M:%S %Z" "date" 10
-                    , Run Network "enp3s0" ["-t", "Down: <fc=#7FC5C6><rx></fc> kB/s | Up: <fc=#ffa600><tx></fc> kB/s"] 10
+                    , Run Network "enp3s0" ["-t", "<fc=#7FC5C6>\x21E7 <rx></fc> <fc=#ffa600>\x21E9 <tx></fc>"] 10
                     , Run Com "bash" ["-c", "~/.spotify_status.sh"] "spotify" 10
                     , Run StdinReader
                     ]
-       , template = "%StdinReader% }{ %enp3s0% | %cpu% | <fc=#85919b>%memory%</fc><>%swap% | <fc=#ffffff>%spotify%</fc> | <fc=#DACCBB>%date%</fc>"
+       , template = "%StdinReader% } <fc=#ffffff>%spotify%</fc> { %enp3s0% %cpu% <fc=#85919b>%memory%</fc>/%swap%   <fc=#DACCBB>%date%</fc>"
        }
