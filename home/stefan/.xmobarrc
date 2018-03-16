@@ -1,14 +1,15 @@
-Config { font = "xft:Terminus-13,xft:FontAwesome-13:bold"
+Config { font = "xft:Terminus-13,xft:DejaVu Sans:size=10:bold,Unifont Upper:size=13,Unifont:size=12"
        , bgColor = "black"
        , fgColor = "grey"
        , position = Static { xpos = 1920, ypos = 0, width = 2560, height = 32 }
-       , commands = [ Run Cpu ["-L","5","-H","50","--normal","#85c600","--high","#E03C52","--template","\x2387 <total>%"] 10
-                    , Run Memory ["-t","\x25D5 <usedratio>%"] 10
-                    , Run Swap ["-t","<usedratio>%","-H","50","-L","0","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10
-                    , Run Date "%Y %b %d (%a) %H:%M:%S %Z" "date" 10
-                    , Run Network "enp3s0" ["-t", "<fc=#7FC5C6>\x21E7 <rx></fc> <fc=#ffa600>\x21E9 <tx></fc>"] 10
-                    , Run Com "bash" ["-c", "~/.spotify_status.sh"] "spotify" 10
-                    , Run StdinReader
-                    ]
+       , commands =
+            [ Run Cpu ["-L","5","-H","50","--normal","#85c600","--high","#E03C52","--template","\x1F4C8 <total>%"] 10
+            , Run Memory ["-t","\x1F4CA <usedratio>%"] 10
+            , Run Swap ["-t","<usedratio>%","-H","50","-L","0","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10
+            , Run Date "%Y %b %d (%a) %H:%M:%S %Z" "date" 10
+            , Run Network "enp3s0" ["-t", "<fc=#7FC5C6>\x1F807 <rx></fc> <fc=#ffa600>\x1F805 <tx></fc>"] 10
+            , Run Com "bash" ["-c", "~/.spotify_status.sh"] "spotify" 10
+            , Run StdinReader
+            ]
        , template = "%StdinReader% } <fc=#ffffff>%spotify%</fc> { %enp3s0% %cpu% <fc=#85919b>%memory%</fc>/%swap%   <fc=#DACCBB>%date%</fc>"
        }

@@ -55,6 +55,9 @@ alias mprn='mpv -profile reverse --no-resume-playback'
 alias mpra='mpv -profile reverseAudio'
 alias mpran='mpv -profile reverseAudio --no-resume-playback'
 
+alias monkmakro='sudo evrouter /dev/input/event* -c ~/.evrouterrc &> /dev/null'
+alias barbmakro='sudo evrouter /dev/input/event* -c ~/.evrouterrc2 &> /dev/null'
+
 #source ~/.aliases
 # Git prompt
 source ~/.git-prompt.sh

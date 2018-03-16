@@ -126,16 +126,12 @@ extraKeys =
   -----------------------------------------------------------------------------
   -- BSP control
   -----------------------------------------------------------------------------
-  , ((mod4Mask .|. shiftMask                , xK_l), sendMessage $ BSP.ExpandTowards R)
-  , ((mod4Mask .|. shiftMask                , xK_h), sendMessage $ BSP.ExpandTowards L)
-  , ((mod4Mask .|. shiftMask                , xK_j), sendMessage $ BSP.ExpandTowards D)
-  , ((mod4Mask .|. shiftMask                , xK_k), sendMessage $ BSP.ExpandTowards U)
-  , ((mod4Mask .|. shiftMask .|. controlMask, xK_l), sendMessage $ BSP.ShrinkFrom R)
-  , ((mod4Mask .|. shiftMask .|. controlMask, xK_h), sendMessage $ BSP.ShrinkFrom L)
-  , ((mod4Mask .|. shiftMask .|. controlMask, xK_j), sendMessage $ BSP.ShrinkFrom D)
-  , ((mod4Mask .|. shiftMask .|. controlMask, xK_k), sendMessage $ BSP.ShrinkFrom U)
-  , ((mod4Mask .|. shiftMask                , xK_r), sendMessage BSP.Rotate)
-  , ((mod4Mask .|. shiftMask .|. controlMask, xK_r), sendMessage BSP.Swap)
+  , ((mod4Mask .|. controlMask, xK_l), sendMessage $ BSP.ExpandTowards R)
+  , ((mod4Mask .|. controlMask, xK_h), sendMessage $ BSP.ExpandTowards L)
+  , ((mod4Mask .|. controlMask, xK_j), sendMessage $ BSP.ExpandTowards D)
+  , ((mod4Mask .|. controlMask, xK_k), sendMessage $ BSP.ExpandTowards U)
+  , ((mod4Mask                , xK_y), sendMessage BSP.Rotate)
+  , ((mod4Mask .|. controlMask, xK_y), sendMessage BSP.Swap)
 
   -----------------------------------------------------------------------------
   -- Start Applications
@@ -269,12 +265,12 @@ myNormalBorderColor  = "#0e1112"
 ---------------------------------------------------------------------------------------------------------------------
 
 myWorkspaces = [wOne, wTwo, wThree, wFour, wFive, wSix, wSeven, wEight, wNine]
-wOne   = "1:urxvt"
-wTwo   = "2:ts"
-wThree = "3:urxvt"
-wFour  = "4:qute"
-wFive  = "5:chromium"
-wSix   = "6:-"
-wSeven = "7:code"
-wEight = "8:comm"
-wNine  = "9:-"
+wOne   = "1:\x269D"
+wTwo   = "2:\x1F5E9"
+wThree = "3:\x269D"
+wFour  = "4:\x1F30E"
+wFive  = "5:\x1F30E"
+wSix   = "6:\x1F5C0"
+wSeven = "7:\x1F6E0"
+wEight = "8:\x1F582"
+wNine  = "9:\x1F39C"

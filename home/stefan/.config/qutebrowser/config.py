@@ -1065,7 +1065,7 @@ c.input.partial_timeout = 0
 ##   - tr-TR: Turkish (Turkey)
 ##   - uk-UA: Ukrainian (Ukraine)
 ##   - vi-VN: Vietnamese (Viet Nam)
-c.spellcheck.languages = ['en-US', 'de-DE']
+c.spellcheck.languages = []
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
@@ -1362,8 +1362,8 @@ config.bind('B', 'set-cmd-text -s :buffer')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
 # config.bind('H', 'back')
-config.bind('J', 'tab-prev')
-config.bind('K', 'tab-next')
+config.bind('J', 'tab-next')
+config.bind('K', 'tab-prev')
 # config.bind('L', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')

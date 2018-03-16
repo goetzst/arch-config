@@ -2,6 +2,7 @@
 artist=`playerctl metadata artist`
 title=`playerctl metadata title`
 p_status=`playerctl status`
+delim="\xEF\xBD\x9C"
 player_status="X"
 if [ $p_status == "Playing" ]
 then
@@ -11,4 +12,5 @@ if [ $p_status == "Paused" ]
 then
 player_status="="
 fi
-printf "${player_status} ${artist} - ${title}"
+message=`echo "${player_status} ${artist} - ${title}" | cut -c1-45`
+printf "${delim}${message}${delim}"
