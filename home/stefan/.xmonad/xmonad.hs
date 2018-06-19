@@ -62,7 +62,7 @@ myConfig pipe = def
 ---------------------------------------------------------------------------------------------------------------------
 
 myAltBrowser  = "chromium"
-myBrowser     = "qutebrowser --backend webengine"
+myBrowser     = "vivaldi-stable"--"qutebrowser --backend webengine"
 myEditor      = "zsh -c -i code"
 myFileManager = "thunar"
 myLauncher    = "rofi -show run"
@@ -90,18 +90,18 @@ myPlayer2Prev  = "playerctl previous"
 
 -- names for appShifts
 myAltBrowserClassName = "Chromium"
-myBrowserTitle        = "qutebrowser"
+myBrowserTitle        = "vivaldi-stable"--"qutebrowser"
 myChatClientTitle     = "TeamSpeak 3"
 myMailClientTitle     = "Mozilla Thunderbird"
 
 -- for starup
 myInitializeWorkspaces = do
-  spawn "urxvt"
-  spawn "urxvt"
-  spawn "urxvt"
-  spawn "qutebrowser --backend webengine"
-  spawn "chromium"
-  spawn "thunderbird"
+  spawn myTerminal
+  spawn myTerminal
+  spawn myTerminal
+  spawn myBrowser
+  spawn myAltBrowser
+  spawn myMailClient
   spawn "teamspeak3"
 
 ---------------------------------------------------------------------------------------------------------------------
